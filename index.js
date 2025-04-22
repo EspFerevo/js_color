@@ -1,9 +1,20 @@
-const cols = document.querySelectorAll('.col')
+const cols = document.querySelectorAll(".col");
 
-function setRandomColors() {
-    cols.forEach(col => { 
-        console.log(col);
-    })
+function generateRadnomColor() {
+  const hexCodes = "0123456789ABCDEF";
+
+  
+  for (let i = 0; i < 6; i++) {    
+    color += 
+  }
 }
 
-setRandomColors()
+
+// Проверяем колонки 
+function setRandomColors() {
+  cols.forEach((col) => {
+    console.log(col);
+  });
+}
+
+setRandomColors();
