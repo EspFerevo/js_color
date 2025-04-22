@@ -41,6 +41,12 @@ function setTextColor(text, color) {
   text.style.color = luminance > 0.5 ? "black" : "white";
 }
 
+function copy(text) {
+  navigator.clipboard.writeText(text);
+
+  return;
+}
+
 //!
 function setRandomColors() {
   cols.forEach((col) => {
