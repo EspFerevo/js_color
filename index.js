@@ -21,6 +21,8 @@ document.addEventListener("click", (event) => {
 
     node.classList.toggle("fa-lock-open");
     node.classList.toggle("fa-lock");
+  } else if (type === "copy") {
+    copy(event.target.textContent);
   }
 });
 
@@ -41,6 +43,8 @@ function setTextColor(text, color) {
   text.style.color = luminance > 0.5 ? "black" : "white";
 }
 
+
+//! Копирка текста 
 function copy(text) {
   navigator.clipboard.writeText(text);
 
