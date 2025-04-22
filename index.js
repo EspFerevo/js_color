@@ -1,5 +1,14 @@
 const cols = document.querySelectorAll(".col");
 
+
+//! Изменение цветов с помощью Space (пробела)
+document.addEventListener("keydown", (event) => {
+  // console.log(event.code); Проверка клика кнопки в консоли
+  if (event.code.toLocaleLowerCase() === "space") {
+    setRandomColors();
+  }
+});
+
 //Генерация случайного цвета
 function generateRadnomColor() {
   const hexCodes = "0123456789ABCDEF";
