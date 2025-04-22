@@ -8,6 +8,24 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+
+
+//! Открывание и закрывание замочка при клике на него 
+document.addEventListener("click", (event) => {
+    const type = event.target.dataset.type;
+  
+    if (type === "lock") {
+      const node =
+        event.target.tagName.toLowerCase() === "i"
+          ? event.target
+          : event.target.querySelector("i");
+  
+      node.classList.toggle("fa-lock-open");
+      node.classList.toggle("fa-lock");
+    }
+  });
+  
+
 //Генерация случайного цвета
 function generateRadnomColor() {
   const hexCodes = "0123456789ABCDEF";
