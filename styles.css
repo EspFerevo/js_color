@@ -8,8 +8,6 @@ body {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   display: flex;
-  background-color: red;
-
 }
 
 .col {

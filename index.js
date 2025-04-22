@@ -11,10 +11,12 @@ function generateRadnomColor() {
   return "#" + color;
 }
 
-// Проверяем колонки
+// Проверяем колонкич
 function setRandomColors() {
   cols.forEach((col) => {
-    col.style.background = generateRadnomColor();
+
+    //! Получаем рандомные цввета при обновлении страницы 
+    col.style.background = generateRadnomColor(); 
   });
 }
 
