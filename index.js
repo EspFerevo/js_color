@@ -2,31 +2,29 @@ const cols = document.querySelectorAll(".col");
 
 //! Изменение цветов с помощью Space (пробела)
 document.addEventListener("keydown", (event) => {
+  event.preventDefault();
   // console.log(event.code); Проверка клика кнопки в консоли
   if (event.code.toLocaleLowerCase() === "space") {
     setRandomColors();
   }
 });
 
-
-
-//! Открывание и закрывание замочка при клике на него 
+//! Открывание и закрывание замочка при клике на него
 document.addEventListener("click", (event) => {
-    const type = event.target.dataset.type;
-  
-    if (type === "lock") {
-      const node =
-        event.target.tagName.toLowerCase() === "i"
-          ? event.target
-          : event.target.querySelector("i");
-  
-      node.classList.toggle("fa-lock-open");
-      node.classList.toggle("fa-lock");
-    }
-  });
-  
+  const type = event.target.dataset.type;
 
-//Генерация случайного цвета
+  if (type === "lock") {
+    const node =
+      event.target.tagName.toLowerCase() === "i"
+        ? event.target
+        : event.target.querySelector("i");
+
+    node.classList.toggle("fa-lock-open");
+    node.classList.toggle("fa-lock");
+  }
+});
+
+//! Генерация случайного цвета
 function generateRadnomColor() {
   const hexCodes = "0123456789ABCDEF";
   let color = "";
@@ -46,9 +44,14 @@ function setTextColor(text, color) {
 //!
 function setRandomColors() {
   cols.forEach((col) => {
+    const isLocked = col.querySelector("i").classList.contains("fa-lock");
     const text = col.querySelector("h2");
     const button = col.querySelector("button");
     const color = generateRadnomColor();
+
+    if (isLocked) {
+      return;
+    }
 
     text.textContent = color;
     col.style.background = color;
