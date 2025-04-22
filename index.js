@@ -14,9 +14,10 @@ function generateRadnomColor() {
 // Проверяем колонкич
 function setRandomColors() {
   cols.forEach((col) => {
-    //!Изменяем текст на нзвание цвета
-    const text = col.querySelectora("h2");
+    //! Изменяем "текст" в h2 на название цвета
+    const text = col.querySelector("h2");
     const color = generateRadnomColor();
+
     text.textContent = color;
 
     //! Получаем рандомные цввета при обновлении страницы
