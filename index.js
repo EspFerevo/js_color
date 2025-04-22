@@ -17,18 +17,17 @@ function setTextColor(text, color) {
   text.style.color = luminance > 0.5 ? "black" : "white";
 }
 
-//! Проверяем колонкич
 function setRandomColors() {
-  cols.forEach((col) => {
-    //?  Изменяем "текст" в h2 на название цвета
-    const text = col.querySelector("h2");
-    const color = generateRadnomColor();
-
-    text.textContent = color;
-
-    //? Получаем рандомные цввета при обновлении страницы
-    col.style.background = generateRadnomColor();
-  });
-}
+    cols.forEach((col) => {
+      const text = col.querySelector("h2");
+      const color = generateRadnomColor();
+  
+      text.textContent = color;
+      col.style.background = color;
+  
+      setTextColor(text, color); // Чтобы текст не терялся на фоне
+    });
+  }
+  
 
 setRandomColors();
