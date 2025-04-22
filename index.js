@@ -14,9 +14,13 @@ function generateRadnomColor() {
 // Проверяем колонкич
 function setRandomColors() {
   cols.forEach((col) => {
+    //!Изменяем текст на нзвание цвета
+    const text = col.querySelectora("h2");
+    const color = generateRadnomColor();
+    text.textContent = color;
 
-    //! Получаем рандомные цввета при обновлении страницы 
-    col.style.background = generateRadnomColor(); 
+    //! Получаем рандомные цввета при обновлении страницы
+    col.style.background = generateRadnomColor();
   });
 }
 
