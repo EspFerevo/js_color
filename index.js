@@ -18,16 +18,17 @@ function setTextColor(text, color) {
 }
 
 function setRandomColors() {
-    cols.forEach((col) => {
-      const text = col.querySelector("h2");
-      const color = generateRadnomColor();
-  
-      text.textContent = color;
-      col.style.background = color;
-  
-      setTextColor(text, color); // Чтобы текст не терялся на фоне
-    });
-  }
-  
+  cols.forEach((col) => {
+    const text = col.querySelector("h2");
+    const button = col.querySelector("button");
+    const color = generateRadnomColor();
+
+    text.textContent = color;
+    col.style.background = color;
+
+    setTextColor(text, color); // Чтобы текст не терялся на фоне
+    setTextColor(button, color); // Чтобы кнопка не терялась на фоне
+  });
+}
 
 setRandomColors();
