@@ -1,6 +1,5 @@
 const cols = document.querySelectorAll(".col");
 
-
 //! Изменение цветов с помощью Space (пробела)
 document.addEventListener("keydown", (event) => {
   // console.log(event.code); Проверка клика кнопки в консоли
@@ -26,6 +25,7 @@ function setTextColor(text, color) {
   text.style.color = luminance > 0.5 ? "black" : "white";
 }
 
+//!
 function setRandomColors() {
   cols.forEach((col) => {
     const text = col.querySelector("h2");
