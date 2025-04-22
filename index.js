@@ -43,8 +43,7 @@ function setTextColor(text, color) {
   text.style.color = luminance > 0.5 ? "black" : "white";
 }
 
-
-//! Копирка текста 
+//! Копирка текста
 function copy(text) {
   navigator.clipboard.writeText(text);
 
@@ -53,6 +52,8 @@ function copy(text) {
 
 //!
 function setRandomColors() {
+  const colors = [];
+
   cols.forEach((col) => {
     const isLocked = col.querySelector("i").classList.contains("fa-lock");
     const text = col.querySelector("h2");
@@ -60,6 +61,7 @@ function setRandomColors() {
     const color = generateRadnomColor();
 
     if (isLocked) {
+      colors.push(text.textContent);
       return;
     }
 
@@ -71,4 +73,7 @@ function setRandomColors() {
   });
 }
 
+function updateColorsHash(colors = []) {
+  document.location.hash = color.toString();
+}
 setRandomColors();
